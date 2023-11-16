@@ -51,30 +51,41 @@ class Garage():
             spaceNum = self.spaces
             paid = int(input("Please enter 5 bones: "))
             if paid >= 5:
-                print("Thank you, have a nice day")
+                print("\nThank you, have a nice day")
                 spaceNum += 1
                 print(f"There are now {spaceNum} parking spaces left")
                 break
             else:
-                print("you owe some more money")
-
-    
-
-            
-    
-                
-    
-    
-        
-
+                print("That ain't gunna work")
 
 
 Park = Garage()
 
-Park.takeTicket()
-Park.incTicket()
-Park.takeTicket()
-Park.takeSpace()
-Park.decSpaces()
-Park.takeSpace()
-Park.payForParking()
+def inRun():
+    while True:
+        question = input("Please press 'Enter' for a ticket: ")
+
+        if question == '':
+            Park.takeTicket()
+            Park.incTicket()            
+            Park.decSpaces()
+            Park.takeSpace()
+            break
+        else:
+            print("\nI said press 'Enter' for a Ticket: ")
+
+def outRun():
+    while True:
+        question = input("\nPlease press 'Enter' and insert your ticket: ")
+
+        if question == '':
+            Park.payForParking()
+            break
+        else:
+            print("\nYou don't like to follow directions do you?")
+
+
+
+    
+inRun()
+outRun()
